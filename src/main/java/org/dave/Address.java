@@ -68,4 +68,11 @@ public class Address {
         AB, BC, MB, NB, NL, NS, ON, PE, QC, SK
     }
 
+    public void setPostalCode(String postalCode) {
+        if (isPostalCodeValid(postalCode)) {
+            this.postalCode = postalCode;
+        }  else {
+            System.out.println("Invalid postal code");
+        }
+    }
 }
