@@ -10,12 +10,12 @@ import lombok.ToString;
 public class Department {
     private String departmentName;
     private String departmentId;
-    private static int nextId = 0;
+    private static int nextId = 1;
 
     public Department(String departmentName) {
         if (isDepartmentNameValid(departmentName)) {
             this.departmentName = departmentName;
-            this.departmentId = String.format("%05d", nextId++);
+            this.departmentId = String.format("D%02d", nextId++);
         } else {
             this.departmentName = null;
             this.departmentId = null;
