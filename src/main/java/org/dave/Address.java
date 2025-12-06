@@ -22,7 +22,7 @@ public class Address {
             this.city = city;
             this.province = province;
             this.postalCode = postalCode;
-        } else  {
+        } else {
             this.streetNo = 0;
             this.street = null;
             this.city = null;
