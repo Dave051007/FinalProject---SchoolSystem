@@ -1,5 +1,12 @@
 package org.dave;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@EqualsAndHashCode
 public class Department {
     private String departmentName;
     private String departmentId;
