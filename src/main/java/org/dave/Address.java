@@ -72,6 +72,7 @@ public class Address {
         if (isPostalCodeValid(postalCode)) {
             this.postalCode = postalCode;
         }  else {
+            this.postalCode = null;
             System.out.println("Invalid postal code");
         }
     }
