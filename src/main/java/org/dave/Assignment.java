@@ -6,9 +6,9 @@ public class Assignment {
     private String assignmentId;
     private String assignmentName;
     private double weight;
-    private List<Integer> courses;
+    private List<Integer> scores;
 
-    private static int nextId = 0;
+    private static int nextId = 1;
 
 
 }
