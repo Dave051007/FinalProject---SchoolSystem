@@ -1,5 +1,6 @@
 package org.dave;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -10,6 +11,13 @@ public class Assignment {
     private List<Integer> scores;
 
     private static int nextId = 1;
+
+    public Assignment(String assignmentName, double weight) {
+        this.assignmentId = String.format("%05d", nextId++);
+        this.assignmentName = assignmentName;
+        this.weight = weight;
+        this.scores = new ArrayList<>(20);
+    }
 
     /**
      * Calculates the average score of the assignment
