@@ -10,5 +10,17 @@ public class Assignment {
 
     private static int nextId = 1;
 
+    /**
+     * Calculates the average score of the assignment
+     * @return the average score of the assignment
+     */
+    public double calcAssignmentAvg() {
+        int sum = 0;
 
+        for (Integer score : scores) {
+            sum += score;
+        }
+
+        return sum / scores.size();
+    }
 }
