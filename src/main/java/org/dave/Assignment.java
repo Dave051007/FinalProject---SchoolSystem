@@ -1,18 +1,21 @@
 package org.dave;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@Getter
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
-    private double weight;
+    private int weight;
     private List<Integer> scores;
 
     private static int nextId = 1;
 
-    public Assignment(String assignmentName, double weight) {
+    public Assignment(String assignmentName, int weight) {
         this.assignmentId = String.format("%05d", nextId++);
         this.assignmentName = assignmentName;
         this.weight = weight;
