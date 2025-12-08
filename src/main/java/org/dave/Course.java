@@ -35,4 +35,26 @@ public class Course {
 
         return sum == 100;
     }
+
+    /**
+     * Adds a student to the student list of the course,
+     * also add a new null element to each assignment of this course,
+     * and add a new null element for the finalScores.
+     * @param student the student to be added
+     * @return true if successfully added student to the list,
+     * false if the student is already in the list
+     */
+    public boolean registerStudent(Student student) {
+        if (registeredStudents.contains(student)) {
+            return false;
+        }
+
+        registeredStudents.add(student);
+
+        for (Assignment assignment : assignments) {
+            assignment.getScores().add(null);
+        }
+
+        return true;
+    }
 }
