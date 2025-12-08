@@ -22,6 +22,25 @@ public class Student {
         this.registerdCourses = new ArrayList<>();
     }
 
+    /**
+     * (1) adds the course to the student's registeredCourses list,
+     * (2) adds the student to the course's registeredStudents list,
+     * (3) appends a null for the scores of each assignment of the course
+     * @param course the course to be registered
+     * @return true if successfully registered the student, false the course is already registered
+     */
+    public boolean registerCourse(Course course) {
+        if  (registerdCourses.contains(course)) {
+            return false;
+        }
+
+        registerdCourses.add(course);
+
+        course.registerStudent(this);
+
+        return true;
+    }
+
     public enum Gender {
         MALE, FEMALE
     }
