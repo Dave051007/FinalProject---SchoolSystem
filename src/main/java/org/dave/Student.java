@@ -9,7 +9,7 @@ public class Student {
     private Gender gender;
     private Address address;
     private Department department;
-    private List<Course> registerdCourses;
+    private List<Course> registeredCourses;
 
     private static int nextId = 1;
 
@@ -19,7 +19,7 @@ public class Student {
         this.gender = gender;
         this.address = address;
         this.department = department;
-        this.registerdCourses = new ArrayList<>();
+        this.registeredCourses = new ArrayList<>();
     }
 
     /**
@@ -30,11 +30,11 @@ public class Student {
      * @return true if successfully registered the student, false the course is already registered
      */
     public boolean registerCourse(Course course) {
-        if  (registerdCourses.contains(course)) {
+        if  (registeredCourses.contains(course)) {
             return false;
         }
 
-        registerdCourses.add(course);
+        registeredCourses.add(course);
 
         course.registerStudent(this);
 
