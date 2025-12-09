@@ -60,4 +60,12 @@ public class Course {
 
         return true;
     }
+
+    public String toSimplifiedString() {
+        return  "courseId = " + courseId +
+                ", courseName = " + courseName +
+                ", department = " + department +
+                ", credits = " + credits +
+                '}';
+    }
 }
