@@ -82,13 +82,13 @@ public class Student {
     @Override
     public String toString() {
         String str = "Student{" +
-                "studentId='" + studentId + '\'' +
-                ", studentName='" + studentName + '\'' +
-                ", gender=" + gender +
-                ", address=" + address +
-                ", department=" + department;
+                "studentId = " + studentId +
+                ", studentName = " + studentName +
+                ", gender = " + gender +
+                ", address = " + address +
+                ", department = " + department;
 
-        for (Course  course : registeredCourses) {
+        for (Course course : registeredCourses) {
             str += course.toSimplifiedString() +  ", ";
         }
 
