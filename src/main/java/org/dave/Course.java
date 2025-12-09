@@ -1,8 +1,11 @@
 package org.dave;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Course {
     private String courseId;
     private String courseName;
