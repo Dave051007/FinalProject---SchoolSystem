@@ -37,7 +37,7 @@ public class Student {
      * @return true if successfully registered the student, false the course is already registered
      */
     public boolean registerCourse(Course course) {
-        if  (registeredCourses.contains(course)) {
+        if (registeredCourses.contains(course)) {
             return false;
         }
 
