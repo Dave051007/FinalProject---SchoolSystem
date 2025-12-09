@@ -78,4 +78,22 @@ public class Student {
                 ", department = " + department +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        String str = "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", gender=" + gender +
+                ", address=" + address +
+                ", department=" + department;
+
+        for (Course  course : registeredCourses) {
+            str += course.toSimplifiedString() +  ", ";
+        }
+
+        str += "}";
+
+        return str;
+    }
 }
