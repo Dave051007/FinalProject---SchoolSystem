@@ -52,4 +52,23 @@ public class Student {
         MALE, FEMALE
     }
 
+    /**
+     * Removes the course from the student's registeredCourses list,
+     * and remove the student from the course's registeredStudents list.
+     * If the course not in the student's registeredCourses list
+     * directly returns false without removing anything.
+     * @param course the course to be registered to
+     * @return true if registered successfully, false if the course not in the student's registeredCourses
+     */
+    public boolean dropCourse(Course course) {
+        if (!registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.remove(course);
+
+        course.getRegisteredStudents().remove(this);
+
+        return true;
+    }
 }
