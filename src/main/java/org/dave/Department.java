@@ -47,7 +47,6 @@ public class Department {
             this.departmentName = departmentName;
         } else {
             this.departmentName = null;
-            System.out.println("Department name is invalid");
         }
     }
 }
