@@ -41,9 +41,13 @@ public class Student {
             return false;
         }
 
-        registeredCourses.add(course);
+        boolean registerStudentToCourse = course.registerStudent(this);
 
-        course.registerStudent(this);
+        if (!registerStudentToCourse) {
+            return false;
+        }
+
+        registeredCourses.add(course);
 
         return true;
     }
