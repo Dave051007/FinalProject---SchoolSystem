@@ -59,7 +59,7 @@ public class Address {
     }
 
     public enum Province {
-        AB, BC, MB, NB, NL, NS, ON, PE, QC, SK
+        AB, BC, MB, NB, NL, NT, NS, NU, ON, PE, QC, SK, YT
     }
 
     public void setPostalCode(String postalCode) {
