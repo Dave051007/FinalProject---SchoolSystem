@@ -10,12 +10,12 @@ import java.util.Random;
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
-    private int weight;
+    private double weight;
     private List<Integer> scores;
 
     private static int nextId = 1;
 
-    public Assignment(String assignmentName, int weight) {
+    public Assignment(String assignmentName, double weight) {
         this.assignmentId = String.format("%05d", nextId++);
         this.assignmentName = assignmentName;
         this.weight = weight;
