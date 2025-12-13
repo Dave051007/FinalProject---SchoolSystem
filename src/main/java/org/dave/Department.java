@@ -29,15 +29,11 @@ public class Department {
      * @return true if department name is valid, false if department name is invalid
      */
     public boolean isDepartmentNameValid(String departmentName) {
-        if (departmentName == null) {
+        if (departmentName == null || departmentName.isBlank()) {
             return false;
         }
 
-        if (departmentName.isBlank()) {
-            return false;
-        }
-
-        for (char  c : departmentName.toCharArray()) {
+        for (char c : departmentName.toCharArray()) {
             if (Character.isDigit(c)) {
                 return false;
             }
