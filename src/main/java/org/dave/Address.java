@@ -28,7 +28,6 @@ public class Address {
             this.city = null;
             this.province = null;
             this.postalCode = null;
-            System.out.println("Invalid postal code");
         }
     }
 
@@ -68,7 +67,6 @@ public class Address {
             this.postalCode = postalCode.toUpperCase();
         } else {
             this.postalCode = null;
-            System.out.println("Invalid postal code");
         }
     }
 }
