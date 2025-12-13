@@ -27,6 +27,10 @@ public class Assignment {
      * @return the average score of the assignment
      */
     public double calcAssignmentAvg() {
+        if (scores == null || scores.isEmpty()) {
+            return 0;
+        }
+
         int sum = 0;
 
         for (Integer score : scores) {
