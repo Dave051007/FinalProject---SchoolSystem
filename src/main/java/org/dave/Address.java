@@ -22,7 +22,7 @@ public class Address {
             this.street = street;
             this.city = city;
             this.province = province;
-            this.postalCode = postalCode;
+            this.postalCode = postalCode.toUpperCase();
         } else {
             this.streetNo = 0;
             this.street = null;
@@ -66,7 +66,7 @@ public class Address {
 
     public void setPostalCode(String postalCode) {
         if (isPostalCodeValid(postalCode)) {
-            this.postalCode = postalCode;
+            this.postalCode = postalCode.toUpperCase();
         } else {
             this.postalCode = null;
             System.out.println("Invalid postal code");
