@@ -28,13 +28,13 @@ public class Department {
      * @param departmentName the given department name
      * @return true if department name is valid, false if department name is invalid
      */
-    public boolean isDepartmentNameValid(String departmentName) {
+    public static boolean isDepartmentNameValid(String departmentName) {
         if (departmentName == null || departmentName.isBlank()) {
             return false;
         }
 
         for (char c : departmentName.toCharArray()) {
-            if (Character.isDigit(c)) {
+            if (!Character.isLetter(c) && c != ' ') {
                 return false;
             }
         }
