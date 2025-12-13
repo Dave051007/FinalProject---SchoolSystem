@@ -89,14 +89,24 @@ public class Student {
                 "studentId = " + studentId +
                 ", studentName = " + studentName +
                 ", gender = " + gender +
-                ", address = " + address +
-                ", department = " + department;
+                ", address = " + address.getStreetNo() +
+                " " + address.getStreet() +
+                " " + address.getCity() +
+                " " + address.getProvince() +
+                " " + address.getPostalCode() +
+                ", department = " + department.getDepartmentName() +
+                ", courses = [";
 
-        for (Course course : registeredCourses) {
-            str += course.toSimplifiedString() +  ", ";
+        for (int i = 0; i < registeredCourses.size(); i++) {
+            Course course = registeredCourses.get(i);
+            str += course.toSimplifiedString();
+
+            if (i < registeredCourses.size() - 1) {
+                str += ", ";
+            }
         }
 
-        str += "}";
+        str += "]}";
 
         return str;
     }
