@@ -8,11 +8,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Getter
+@Setter
 public class Address {
-    @Setter private int streetNo;
-    @Setter private String street;
-    @Setter private String city;
-    @Setter private Province province;
+    private int streetNo;
+    private String street;
+    private String city;
+    private Province province;
     private String postalCode;
 
     public Address(int streetNo, String street, String city, Province province, String postalCode) {
@@ -53,7 +54,7 @@ public class Address {
                 if (!(Character.isLetter(c))) {
                     return false;
                 }
-            }  else {
+            } else {
                 if (!(Character.isDigit(c))) {
                     return false;
                 }
@@ -70,7 +71,7 @@ public class Address {
     public void setPostalCode(String postalCode) {
         if (isPostalCodeValid(postalCode)) {
             this.postalCode = postalCode;
-        }  else {
+        } else {
             this.postalCode = null;
             System.out.println("Invalid postal code");
         }
