@@ -37,7 +37,7 @@ public class Assignment {
             sum += score;
         }
 
-        return sum / scores.size();
+        return (double) sum / scores.size();
     }
 
     /**
