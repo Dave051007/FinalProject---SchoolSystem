@@ -29,6 +29,10 @@ public class Student {
         this.registeredCourses = new ArrayList<>();
     }
 
+    public enum Gender {
+        MALE, FEMALE
+    }
+
     /**
      * (1) adds the course to the student's registeredCourses list,
      * (2) adds the student to the course's registeredStudents list,
@@ -50,10 +54,6 @@ public class Student {
         registeredCourses.add(course);
 
         return true;
-    }
-
-    public enum Gender {
-        MALE, FEMALE
     }
 
     /**
