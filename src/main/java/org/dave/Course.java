@@ -62,9 +62,9 @@ public class Course {
     }
 
     public String toSimplifiedString() {
-        return  "courseId = " + courseId +
+        return  "{courseId = " + courseId +
                 ", courseName = " + courseName +
-                ", department = " + department +
+                ", department = " + department.getDepartmentName() +
                 ", credits = " + credits +
                 '}';
     }
