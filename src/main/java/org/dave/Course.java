@@ -60,6 +60,8 @@ public class Course {
             assignment.getScores().add(null);
         }
 
+        finalScores.add(null);
+
         return true;
     }
 
