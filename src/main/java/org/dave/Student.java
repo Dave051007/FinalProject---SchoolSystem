@@ -77,9 +77,9 @@ public class Student {
     }
 
     public String toSimplifiedString() {
-        return "studentId = " + studentId  +
+        return "{studentId = " + studentId  +
                 ", studentName = " + studentName +
-                ", department = " + department +
+                ", department = " + department.getDepartmentName() +
                 '}';
     }
 
