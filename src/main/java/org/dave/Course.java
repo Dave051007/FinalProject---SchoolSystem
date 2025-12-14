@@ -163,11 +163,11 @@ public class Course {
 
             for (Integer score : a.getScores()) {
                     sum += score;
-                }
+            }
 
             double avg = sum / a.getScores().size();
             System.out.printf("%-15.0f", avg);
-            }
+        }
     }
 
     public String toSimplifiedString() {
