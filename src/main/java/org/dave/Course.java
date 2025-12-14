@@ -160,24 +160,18 @@ public class Course {
         System.out.printf("%-20s", "Average");
         for (Assignment a : assignments) {
             double sum = 0;
-            int count = 0;
+
             for (Integer score : a.getScores()) {
-                if (score != null) {
                     sum += score;
-                    count++;
                 }
-            }
 
-            double avg = count > 0 ? sum / count : 0;
+            double avg = sum / a.getScores().size();
             System.out.printf("%-15.0f", avg);
-        }
-
-        System.out.println();
+            }
     }
 
-
     public String toSimplifiedString() {
-        return  "{courseId = " + courseId +
+        return "{courseId = " + courseId +
                 ", courseName = " + courseName +
                 ", department = " + department.getDepartmentName() +
                 ", credits = " + credits +
