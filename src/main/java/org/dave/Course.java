@@ -13,6 +13,7 @@ public class Course {
     private Department department;
     private List<Student> registeredStudents;
     private List<Assignment> assignments;
+    private List<Integer> finalScores;
 
     private static int nextId = 1;
 
@@ -23,6 +24,7 @@ public class Course {
         this.department = department;
         this.registeredStudents = new ArrayList<>(20);
         this.assignments = new ArrayList<>(10);
+        this.finalScores = new ArrayList<>(20);
     }
 
     /**
