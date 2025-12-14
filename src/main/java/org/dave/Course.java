@@ -172,6 +172,8 @@ public class Course {
             double avg = sum / a.getScores().size();
             System.out.printf("%-15.0f", avg);
         }
+
+        System.out.println();
     }
 
     public String toSimplifiedString() {
@@ -180,5 +182,28 @@ public class Course {
                 ", department = " + department.getDepartmentName() +
                 ", credits = " + credits +
                 '}';
+    }
+
+    @Override
+    public String toString() {
+        String str = "Course{" +
+                "courseId = " + courseId +
+                ", courseName = " + courseName +
+                ", credits = " + credits +
+                ", department = " + department +
+                ", registeredStudents = [";
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            Student student = registeredStudents.get(i);
+            str += student.toSimplifiedString();
+
+            if (i < registeredStudents.size() - 1) {
+                str += ", ";
+            }
+        }
+
+        str += "]}";
+
+        return str;
     }
 }
