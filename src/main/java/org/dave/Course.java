@@ -61,6 +61,29 @@ public class Course {
         return true;
     }
 
+    /**
+     * Calculates the weighted average score of a student.
+     * @return an array of weighted average score of each student.
+     */
+    public int[] calcStudentsAverage() {
+        int[] averages = new int[registeredStudents.size()];
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            double sum = 0;
+
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
+                if (score != null) {
+                    sum += score;
+                }
+            }
+
+            averages[i] = (int) Math.round(sum / registeredStudents.size());
+        }
+
+        return averages;
+    }
+
     public String toSimplifiedString() {
         return  "{courseId = " + courseId +
                 ", courseName = " + courseName +
