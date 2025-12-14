@@ -114,6 +114,20 @@ public class Course {
         for (Assignment assignment : assignments) {
             assignment.generateRandomScore();
         }
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            double sum = 0;
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
+                if (score != null) {
+                    sum += score * (assignment.getWeight() / 100.0);
+                }
+            }
+
+            int finalScore = (int) Math.round(sum);
+
+            finalScores.set(i, finalScore);
+        }
     }
 
     /**
