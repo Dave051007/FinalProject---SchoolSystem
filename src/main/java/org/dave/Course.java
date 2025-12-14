@@ -91,7 +91,13 @@ public class Course {
      * @return true when task done successfully
      */
     public boolean addAssignment(String assignmentName, double weight) {
-        this.assignments.add(new Assignment(assignmentName, weight));
+        Assignment newAssignment = new Assignment(assignmentName, weight);
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            newAssignment.getScores().add(null);
+        }
+
+        assignments.add(newAssignment);
 
         return true;
     }
