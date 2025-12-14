@@ -82,7 +82,7 @@ public class Course {
                 }
             }
 
-            averages[i] = (int) Math.round(sum / registeredStudents.size());
+            averages[i] = (int) Math.round(sum / assignments.size());
         }
 
         return averages;
