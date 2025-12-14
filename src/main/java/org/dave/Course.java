@@ -30,13 +30,13 @@ public class Course {
      * @return true if valid, false if invalid
      */
     public boolean isAssignmentWeightValid() {
-        int sum = 0;
+        double sum = 0;
 
         for (Assignment assignment : assignments) {
             sum += assignment.getWeight();
         }
 
-        return sum == 100;
+        return Math.round(sum) == 100;
     }
 
     /**
