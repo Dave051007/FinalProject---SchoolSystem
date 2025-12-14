@@ -96,6 +96,16 @@ public class Course {
         return true;
     }
 
+    /**
+     *  Generates random scores for each assignment and student,
+     *  and calculates the final score for each student.
+     */
+    public void generateScores() {
+        for (Assignment assignment : assignments) {
+            assignment.generateRandomScore();
+        }
+    }
+
     public String toSimplifiedString() {
         return  "{courseId = " + courseId +
                 ", courseName = " + courseName +
