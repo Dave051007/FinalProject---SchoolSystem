@@ -142,7 +142,7 @@ public class Course {
             System.out.printf("%-15s", assignment.getAssignmentName());
         }
 
-        System.out.println("Final Score");
+        System.out.println("Weighted Average Score");
 
         int[] studentAverages = calcStudentsAverage();
 
@@ -157,6 +157,22 @@ public class Course {
             System.out.println(studentAverages[i]);
         }
 
+        System.out.printf("%-20s", "Average");
+        for (Assignment a : assignments) {
+            double sum = 0;
+            int count = 0;
+            for (Integer score : a.getScores()) {
+                if (score != null) {
+                    sum += score;
+                    count++;
+                }
+            }
+
+            double avg = count > 0 ? sum / count : 0;
+            System.out.printf("%-15.0f", avg);
+        }
+
+        System.out.println();
     }
 
 
