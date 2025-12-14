@@ -84,6 +84,18 @@ public class Course {
         return averages;
     }
 
+    /**
+     * Adds an assignment to the course.
+     * @param assignmentName the assignment to be added
+     * @param weight the weight of the assignment
+     * @return true when task done successfully
+     */
+    public boolean addAssignment(String assignmentName, double weight) {
+        this.assignments.add(new Assignment(assignmentName, weight));
+
+        return true;
+    }
+
     public String toSimplifiedString() {
         return  "{courseId = " + courseId +
                 ", courseName = " + courseName +
