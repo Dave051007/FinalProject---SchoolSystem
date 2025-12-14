@@ -112,6 +112,36 @@ public class Course {
         }
     }
 
+    /**
+     * Displays the scores of a course in a table,
+     * with the assignment averages and student weighted average
+     */
+    public void displayScores() {
+        System.out.printf("Course: %s (%s)%n", courseName, courseId);
+
+        System.out.print("                ");
+        for (Assignment assignment : assignments) {
+            System.out.printf("%-15s", assignment.getAssignmentName());
+        }
+
+        System.out.println("Final Score");
+
+        int[] studentAverages = calcStudentsAverage();
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            Student student = registeredStudents.get(i);
+            System.out.printf("%-20s", student.getStudentName());
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
+                System.out.printf("%-15s", score != null ? score : "-");
+            }
+
+            System.out.println(studentAverages[i]);
+        }
+
+    }
+
+
     public String toSimplifiedString() {
         return  "{courseId = " + courseId +
                 ", courseName = " + courseName +
