@@ -43,3 +43,16 @@ It allows you register students, drop a student from a course, add assignments, 
 
 ---
 
+## Features
+- Automatic ID generation for students, courses, and departments
+- Weighted assignment grading
+- Random score generation
+- Tabular display of student scores and assignment averages
+- Input validation for postal codes, department names, and assignment weights
+- Consistent formatting for names using title case
+
+---
+
+## Dependencies
+- **JUnit Jupiter** – for unit testing user-defined methods
+- **Lombok** – for automatic getters, setters, `toString()`, and `equals()`
