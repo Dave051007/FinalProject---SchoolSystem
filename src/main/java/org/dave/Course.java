@@ -157,7 +157,12 @@ public class Course {
                 System.out.printf("%-15s", score != null ? score : "-");
             }
 
-            System.out.println(studentAverages[i]);
+            if (!isAssignmentWeightValid()) {
+                System.out.println("Invalid Assignment Weight");
+            } else {
+                System.out.println(studentAverages[i]);
+            }
+
         }
 
         System.out.printf("%-20s", "Average");
