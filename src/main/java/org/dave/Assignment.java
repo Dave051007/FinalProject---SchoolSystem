@@ -1,6 +1,7 @@
 package org.dave;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,14 +11,14 @@ import java.util.Random;
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
-    private double weight;
-    private List<Integer> scores;
+    @Setter double weight;
+    @Setter List<Integer> scores;
 
     private static int nextId = 1;
 
     public Assignment(String assignmentName, double weight) {
         this.assignmentId = String.format("%05d", nextId++);
-        this.assignmentName = assignmentName;
+        this.assignmentName = Util.toTitleCase(assignmentName);
         this.weight = weight;
         this.scores = new ArrayList<>(20);
     }
@@ -69,5 +70,9 @@ public class Assignment {
                 ", assignmentName='" + assignmentName + '\'' +
                 ", weight=" + weight +
                 '}';
+    }
+
+    public void setAssignmentName(String assignmentName) {
+        this.assignmentName = Util.toTitleCase(assignmentName);
     }
 }
