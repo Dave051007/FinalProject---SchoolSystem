@@ -206,7 +206,7 @@ public class Course {
             }
         }
 
-        str += "]}";
+        str += "]}\n";
 
         return str;
     }

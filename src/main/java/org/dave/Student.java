@@ -105,7 +105,7 @@ public class Student {
             }
         }
 
-        str += "]}";
+        str += "]}\n";
 
         return str;
     }
