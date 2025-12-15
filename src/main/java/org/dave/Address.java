@@ -11,7 +11,7 @@ import lombok.ToString;
 public class Address {
     @Setter int streetNo;
     @Setter private String street;
-    @Setter private String city;
+    private String city;
     @Setter private Province province;
     private String postalCode;
 
@@ -19,7 +19,7 @@ public class Address {
         if (isPostalCodeValid(postalCode)) {
             this.streetNo = streetNo;
             this.street = street;
-            this.city = city;
+            this.city = Util.toTitleCase(city);
             this.province = province;
             this.postalCode = postalCode.toUpperCase();
         } else {
@@ -68,5 +68,10 @@ public class Address {
         } else {
             this.postalCode = null;
         }
+    }
+
+    public void setCity(String city) {
+        city = Util.toTitleCase(city);
+        this.city = city;
     }
 }
