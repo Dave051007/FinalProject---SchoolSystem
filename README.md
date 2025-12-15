@@ -61,6 +61,8 @@ It allows you register students, drop a student from a course, add assignments, 
 
 ## Example Usage
 ```java
+public class Main {
+    public static void main(String[] args) {
         // Department name
         Department d1 = new Department("Vanier");
 
@@ -78,23 +80,38 @@ It allows you register students, drop a student from a course, add assignments, 
         s3.registerCourse(c1);
 
         // Assignments and their weight
-       c1.addAssignment("Code1", 20);
-       c1.addAssignment("Code2", 20);
-       c1.addAssignment("Code3", 20);
-       c1.addAssignment("Code4", 20);
-       c1.addAssignment("Code5", 20);
+        c1.addAssignment("Code1", 20);
+        c1.addAssignment("Code2", 20);
+        c1.addAssignment("Code3", 20);
+        c1.addAssignment("Code4", 20);
+        c1.addAssignment("Code5", 20);
 
-       // Checks if assignment weights adds up to 100
+        // Checks if assignment weights adds up to 100
         System.out.println(c1.isAssignmentWeightValid());
 
         // Generate random scores for each student
-       c1.generateScores();
+        c1.generateScores();
 
-       // Displays the weighted average scores of each student and the assignments average in a table
-       c1.displayScores();
+        // Displays the weighted average scores of each student and the assignments average in a table
+        c1.displayScores();
 
-       // Prints out information about course
-       System.out.print(c1);
+        // Prints out information about course
+        System.out.print(c1);
 
-       // Prints out information about student
+        // Prints out information about student
         System.out.println(s1);
+    }
+}    
+```
+---
+
+## Unit Testing
+### Methods tested using JUnit Jupiter:
+
+- `Util.toTitleCase()`
+
+- `Assignment.calcAssignmentAvg()`
+
+- `Course.isAssignmentWeightValid()`
+
+- `Student.registerCourse()`
