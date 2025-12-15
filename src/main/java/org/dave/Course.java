@@ -9,21 +9,20 @@ import java.util.List;
 
 @Getter
 @EqualsAndHashCode
-@Setter
 public class Course {
     private String courseId;
     private String courseName;
-    private double credits;
-    private Department department;
-    private List<Student> registeredStudents;
-    private List<Assignment> assignments;
-    private List<Integer> finalScores;
+    @Setter double credits;
+    @Setter private Department department;
+    @Setter private List<Student> registeredStudents;
+    @Setter private List<Assignment> assignments;
+    @Setter private List<Integer> finalScores;
 
     private static int nextId = 1;
 
     public Course(String courseName, double credits, Department department) {
         this.courseId = String.format("C-%s-%02d", department.getDepartmentId(), nextId++);
-        this.courseName = courseName;
+        this.courseName = Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
         this.registeredStudents = new ArrayList<>(20);
@@ -205,5 +204,10 @@ public class Course {
         str += "]}";
 
         return str;
+    }
+
+    public void setCourseName(String courseName) {
+        courseName = Util.toTitleCase(courseName);
+        this.courseName = courseName;
     }
 }
